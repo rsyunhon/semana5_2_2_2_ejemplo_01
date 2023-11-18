@@ -1,7 +1,8 @@
 from sqlalchemy.orm import sessionmaker
 # se importa la clase(s) del
 # archivo crear_entidades
-from crear_entidades import Autor
+from crear_entidades import Ciudad
+from crear_entidades import Estadio
 # se importa el engine
 from base_datos import engine
 
@@ -18,11 +19,16 @@ session = Session()
 # Se hace uso del método query.
 # filter, permite agregrar condiciones a la búsqueda, con base
 # a las propiedades de la entidad
-lista_autores = session.query(Autor).filter(Autor.nacionalidad=="ecuatoriana")
+lista_ciudades = session.query(Ciudad).filter(Ciudad.pais=="Ecuador")
 # La variable lista_autores, tendrá un listado de objetos de tipo Autor que
 # tengan en la propiedad de nacionalidad el valor: ecuatoriana
 
 # se realiza un proceso iterativo para presentar la información
 # de cada objeto.
-for l in lista_autores:
+for l in lista_ciudades:
+    print(l)
+
+
+lista_estadio = session.query(Estadio).filter(Estadio.nombreEstadio=="7 de Octubre")
+for l in lista_estadio:
     print(l)

@@ -22,7 +22,7 @@ class Ciudad(Base):
     poblacion = Column(Integer)
 
     def __str__(self):
-        return "%s %s %s " % (self.nombreCiudad, self.pais, self.poblacion)
+        return "%s %s %sgit  " % (self.nombreCiudad, self.pais, self.poblacion)
 
 
 class Estadio(Base):
